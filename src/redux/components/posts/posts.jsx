@@ -30,9 +30,11 @@ export const Posts = () => {
 
   return (
     <div>
-      {postsResults?.map((post) => (
-        <PostCard key={post.id} post={post} />
-      ))}
+      <div style={{ textAlign: "left" }}>
+        {postsResults?.map((post) => (
+          <PostCard key={post.id} post={post} />
+        ))}
+      </div>
       <div
         style={{
           position: "fixed",

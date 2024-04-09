@@ -3,16 +3,17 @@ export const AboutUs = () => {
     <div>
       <div
         style={{
-          backgroundColor: "#A3C1AD",        
+          backgroundColor: "#A3C1AD",
           color: "white",
-          fontSize: "75px",
-          textAlign: "center",        
-          padding: "50px"
+          fontSize: "50px",
+          textAlign: "center",
+          padding: "50px",
+          fontWeight: "bolder"
         }}
       >
-        <p>Our Company</p>
+        <p>About us</p>
       </div>
-      <h2>Company Descriptions</h2>
+      <p>Company Descriptions</p>
     </div>
   );
 };

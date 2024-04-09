@@ -40,7 +40,7 @@ export const Header = () => {
           class="navbar navbar-expand-lg navbar-light ps-4 pe-2"
           style={{ background: "#5F9EA0", color: "white" }}
         >
-          <a class="navbar-brand" href={`${window.location.origin}/albums`}>
+          <a class="navbar-brand mb-1" href={`${window.location.origin}/albums`}>
             <BsCamera2 style={{ color: "white" }} />
           </a>
 
@@ -126,14 +126,18 @@ export const Header = () => {
                     POSTS
                   </a>
                 </li>
-                <li>
-                  <a
-                    href={`${window.location.origin}/users`}
-                    class={`nav-link text-dark ${userButton}`}
-                  >
-                    USERS
-                  </a>
-                </li>
+                {
+                  profile.role === "admin" && (
+                    <li>
+                      <a
+                        href={`${window.location.origin}/users`}
+                        class={`nav-link text-dark ${userButton}`}
+                      >
+                        USERS
+                      </a>
+                    </li>
+                  )
+                }
               </ul>
             </div>
 
