@@ -13,9 +13,9 @@ import { fetchUsersData } from "../api/user.api";
 const usersList = [
   {
     id: 1,
-    name: "Aniket",
-    username: "Ani",
-    email: "aniket.vishwakarma@happiestminds.com",
+    name: "Test User",
+    username: "TestUser",
+    email: "postgram.test@mailinator.com",
     role: "admin",
     password: "12345",
   },
