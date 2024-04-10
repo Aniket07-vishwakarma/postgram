@@ -5,6 +5,7 @@ phases:
       nodejs: 18
     commands:
       - npm install
+      - npm install react-scripts --save
   build:
     commands:
       - npm run build
