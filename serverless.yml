@@ -1,0 +1,10 @@
+name: postgram
+stage: dev
+
+myWebsite:
+  component: "@serverless/website"
+  inputs:
+    code:
+      root: ./
+      src: ./src
+    region: ap-south-1
