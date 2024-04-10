@@ -5,8 +5,8 @@ phases:
       nodejs: 18
     commands:
       - npm install
-      - npm install -g --silent react-scripts
-      - npm install -g --silent serverless
+      - npm install react-scripts --save-dev
+      - npm install serverless --save-dev
   build:
     commands:
       - npm run build

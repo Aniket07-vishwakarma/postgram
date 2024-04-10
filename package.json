@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "serverless",
+    "build": "npx serverless",
     "test": "react-scripts test",
     "eject": "react-scripts eject"    
   },
