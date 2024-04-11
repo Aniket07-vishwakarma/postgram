@@ -2,7 +2,6 @@ import { Col } from "react-bootstrap";
 
 export const AlbumCards = ({ album }) => {
   const firstLetter = album.title.toUpperCase();
-  console.log(window.location.href)
 
   return (
     <div>
@@ -10,7 +9,7 @@ export const AlbumCards = ({ album }) => {
       <Col>
         <div className="card-group mt-2 p-2" style={{ height: "275px" }}>
           <div className="card border-dark">
-            <p class="centered" style={{ fontSize: "65px" }}>
+            <p className="centered" style={{ fontSize: "65px" }}>
               {firstLetter[0]}
             </p>
 

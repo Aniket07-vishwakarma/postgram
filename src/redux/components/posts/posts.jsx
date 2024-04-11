@@ -46,7 +46,7 @@ export const Posts = () => {
       >
         <button
           type="button"
-          class="btn"
+          className="btn"
           style={{ background: "#5F9EA0", color: "white" }}
           onClick={handleShow}
         >

@@ -37,25 +37,25 @@ export const Header = () => {
     return (
       <div>
         <nav
-          class="navbar navbar-expand-lg navbar-light ps-4 pe-2"
+          className="navbar navbar-expand-lg navbar-light ps-4 pe-2"
           style={{ background: "#5F9EA0", color: "white" }}
         >
-          <a class="navbar-brand mb-1" href={`${window.location.origin}/albums`}>
+          <a className="navbar-brand mb-1" href={`${window.location.origin}/albums`}>
             <BsCamera2 style={{ color: "white" }} />
           </a>
 
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li class="nav-item active ">
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li className="nav-item active ">
                 <a
-                  class="nav-link text-light"
+                  className="nav-link text-light"
                   href={`${window.location.origin}/aboutus`}
                 >
                   About Us
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="#">
+              <li className="nav-item">
+                <a className="nav-link text-light" href="#">
                   Contact Us
                 </a>
               </li>
@@ -102,17 +102,17 @@ export const Header = () => {
           </Modal.Footer>
         </Modal>
 
-        <div class="container-fluid mt-1">
-          <div class="row" style={{ height: "570px" }}>
+        <div className="container-fluid mt-1">
+          <div className="row" style={{ height: "570px" }}>
             <div
-              class="col-2 border border-dark"
+              className="col-2 border border-dark"
               style={{ textAlign: "center", backgroundColor: "#e6e6ff" }}
             >
-              <ul class="nav nav-pills flex-column mb-auto mt-2">
-                <li class="nav-item">
+              <ul className="nav nav-pills flex-column mb-auto mt-2">
+                <li className="nav-item">
                   <a
                     href={`${window.location.origin}/albums`}
-                    class={`nav-link text-dark ${albumButton}`}
+                    className={`nav-link text-dark ${albumButton}`}
                     aria-current="page"
                   >
                     ALBUMS
@@ -121,7 +121,7 @@ export const Header = () => {
                 <li>
                   <a
                     href={`${window.location.origin}/posts`}
-                    class={`nav-link text-dark ${postButton}`}
+                    className={`nav-link text-dark ${postButton}`}
                   >
                     POSTS
                   </a>
@@ -131,7 +131,7 @@ export const Header = () => {
                     <li>
                       <a
                         href={`${window.location.origin}/users`}
-                        class={`nav-link text-dark ${userButton}`}
+                        className={`nav-link text-dark ${userButton}`}
                       >
                         USERS
                       </a>
@@ -141,8 +141,8 @@ export const Header = () => {
               </ul>
             </div>
 
-            <div class="col-10" style={{ height: "100%", overflow: "scroll" }}>
-              <div class="container ">
+            <div className="col-10" style={{ height: "100%", overflow: "scroll" }}>
+              <div className="container ">
                 <AppRoutes />
               </div>
             </div>

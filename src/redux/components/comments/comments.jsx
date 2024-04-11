@@ -19,10 +19,10 @@ export const Comments = ({ postId }) => {
   return (
     <div>
       {!commentsResults?.loading && (
-        <ul class="list-group list-group-flush text-left">
+        <ul className="list-group list-group-flush text-left">
           <hr />
           {commentsResults?.comments.map((comment) => (
-            <li class="list-group-item">
+            <li className="list-group-item" key={comment.id}>
               <b>Email: {comment.email}</b>
               <p>{comment.body}</p>
             </li>

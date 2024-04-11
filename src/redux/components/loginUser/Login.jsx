@@ -14,10 +14,10 @@ export const LoginUser = () => {
     return state?.UserReducer?.login;
   });
 
-  if (login) {
-    console.log({ login });
-    navigate("/albums");
-  }
+  // if (login) {
+  //   console.log({ login });
+  //   navigate("/albums");
+  // }
 
   //Work in progress message.
   useEffect(() => {
@@ -39,6 +39,9 @@ export const LoginUser = () => {
           navigate("/login");
         }
       });
+    } else if (login) {
+      console.log({ login });
+      navigate("/albums");
     }
   }, [login]);
 

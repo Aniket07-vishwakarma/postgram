@@ -5,13 +5,13 @@ export const PostCard = ({ post }) => {
   const [openComment, setOpenComment] = useState(false);
 
   return (
-    <div class="card mt-1 mb-2">
-      <div class="card-header">{post.title}</div>
-      <div class="card-body">
-        <p class="card-text">{post.body}</p>
+    <div className="card mt-1 mb-2">
+      <div className="card-header">{post.title}</div>
+      <div className="card-body">
+        <p className="card-text">{post.body}</p>
         <button
           type="button"
-          class="btn btn-primary btn-sm"
+          className="btn btn-primary btn-sm"
           onClick={() => setOpenComment(!openComment)}
         >
           Comments
