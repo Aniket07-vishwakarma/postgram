@@ -10,7 +10,7 @@ export const LoginUser = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const dispatch = useDispatch();
-  const login = useSelector((state) => {    
+  const login = useSelector((state) => {
     return state?.UserReducer?.login;
   });
 
@@ -28,14 +28,16 @@ export const LoginUser = () => {
         button: {
           text: "Start App",
         },
-      }).then(() => {
-        dispatch(
-          loginUser({
-            email: "admin.test@mailinator.com",
-            password: "Password@123",
-          })
-        );
-        navigate("/login");
+      }).then((event) => {
+        if (event) {
+          dispatch(
+            loginUser({
+              email: "admin.test@mailinator.com",
+              password: "Password@123",
+            })
+          );
+          navigate("/login");
+        }
       });
     }
   }, [login]);
