@@ -141,7 +141,7 @@ export const Header = () => {
               </ul>
             </div>
 
-            <div class="col-10">
+            <div class="col-10" style={{ height: "100%", overflow: "scroll" }}>
               <div class="container ">
                 <AppRoutes />
               </div>

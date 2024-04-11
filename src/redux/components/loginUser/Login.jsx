@@ -1,23 +1,44 @@
 import { useFormik } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../actions/user.action";
+import swal from "sweetalert";
 
 export const LoginUser = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const dispatch = useDispatch();
-  const login = useSelector((state) => {
-    // console.log(state?.UserReducer)
+  const login = useSelector((state) => {    
     return state?.UserReducer?.login;
   });
 
-  if (login) {    
+  if (login) {
     console.log({ login });
     navigate("/albums");
   }
+
+  //Work in progress message.
+  useEffect(() => {
+    if (!login) {
+      swal({
+        title: "Work in progress!",
+        text: "Hi there. Welcome to Postgram demo project. Work is in progress. Please click on Start App button to start app.",
+        button: {
+          text: "Start App",
+        },
+      }).then(() => {
+        dispatch(
+          loginUser({
+            email: "admin.test@mailinator.com",
+            password: "Password@123",
+          })
+        );
+        navigate("/login");
+      });
+    }
+  }, [login]);
 
   const formik = useFormik({
     enableReinitialize: true,

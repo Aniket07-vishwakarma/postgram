@@ -17,7 +17,15 @@ const usersList = [
     username: "TestUser",
     email: "postgram.test@mailinator.com",
     role: "admin",
-    password: "12345",
+    password: "Password@123",
+  },
+  {
+    id: 1,
+    name: "Admin test",
+    username: "AdminTest",
+    email: "admin.test@mailinator.com",
+    role: "admin",
+    password: "Password@123",
   },
   {
     id: 2,
@@ -25,7 +33,7 @@ const usersList = [
     username: "Bret",
     email: "Sincere@april.biz",
     role: "admin",
-    password: "12345",
+    password: "Password@123",
   },
   {
     id: 3,
@@ -33,7 +41,7 @@ const usersList = [
     username: "Antonette",
     email: "Shanna@melissa.tv",
     role: "consumer",
-    password: "12345",
+    password: "Password@123",
   },
   {
     id: 4,
@@ -41,7 +49,7 @@ const usersList = [
     username: "Samantha",
     email: "Nathan@yesenia.net",
     role: "consumer",
-    password: "12345",
+    password: "Password@123",
   },
 ];
 
