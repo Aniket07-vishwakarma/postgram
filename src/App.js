@@ -1,4 +1,3 @@
-// import logo from "./logo.svg";
 import { Provider } from "react-redux";
 import "./App.css";
 import { LayoutRoutes } from "./layout/routes";

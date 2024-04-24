@@ -49,9 +49,9 @@ export const Header = () => {
               <li className="nav-item active ">
                 <a
                   className="nav-link text-light"
-                  href={`${window.location.origin}/aboutus`}
+                  href={`${window.location.origin}/about`}
                 >
-                  About Us
+                  About App
                 </a>
               </li>
               <li className="nav-item">

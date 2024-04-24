@@ -8,12 +8,18 @@ export const AboutUs = () => {
           fontSize: "50px",
           textAlign: "center",
           padding: "50px",
-          fontWeight: "bolder"
+          fontWeight: "bolder",
         }}
       >
-        <p>About us</p>
+        <p>About App</p>
       </div>
-      <p>Company Descriptions</p>
+      <div className="border border-dark mt-2 p-2">
+        <h6>
+          This is a demo project built on React.js. The purpose of this
+          app is to learn about hosting an application on AWS using a CI/CD code
+          pipeline.
+        </h6>
+      </div>
     </div>
   );
 };

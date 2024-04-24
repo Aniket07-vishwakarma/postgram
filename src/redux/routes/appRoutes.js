@@ -14,7 +14,7 @@ export default function AppRoutes() {
       <Route path="/albums/:id" element={<Photos />} />
       <Route path="/posts" element={<Posts />} />
       <Route path="/users" element={<ShowUsers />} />
-      <Route path="/aboutus" element={<AboutUs />} />
+      <Route path="/about" element={<AboutUs />} />
     </Routes>
   );
 }
