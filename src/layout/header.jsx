@@ -40,7 +40,10 @@ export const Header = () => {
           className="navbar navbar-expand-lg navbar-light ps-4 pe-2"
           style={{ background: "#5F9EA0", color: "white" }}
         >
-          <a className="navbar-brand mb-1" href={`${window.location.origin}/albums`}>
+          <a
+            className="navbar-brand mb-1"
+            href={`${window.location.origin}/albums`}
+          >
             <BsCamera2 style={{ color: "white" }} />
           </a>
 
@@ -105,7 +108,7 @@ export const Header = () => {
         <div className="container-fluid mt-1">
           <div className="row" style={{ height: "570px" }}>
             <div
-              className="col-2 border border-dark"
+              className="col-2 border border-color"
               style={{ textAlign: "center", backgroundColor: "#e6e6ff" }}
             >
               <ul className="nav nav-pills flex-column mb-auto mt-2">
@@ -126,22 +129,23 @@ export const Header = () => {
                     POSTS
                   </a>
                 </li>
-                {
-                  profile.role === "admin" && (
-                    <li>
-                      <a
-                        href={`${window.location.origin}/users`}
-                        className={`nav-link text-dark ${userButton}`}
-                      >
-                        USERS
-                      </a>
-                    </li>
-                  )
-                }
+                {profile.role === "admin" && (
+                  <li>
+                    <a
+                      href={`${window.location.origin}/users`}
+                      className={`nav-link text-dark ${userButton}`}
+                    >
+                      USERS
+                    </a>
+                  </li>
+                )}
               </ul>
             </div>
 
-            <div className="col-10" style={{ height: "100%", overflow: "scroll" }}>
+            <div
+              className="col-10"
+              style={{ height: "100%", overflow: "scroll" }}
+            >
               <div className="container ">
                 <AppRoutes />
               </div>

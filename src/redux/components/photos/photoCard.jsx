@@ -9,10 +9,10 @@ export const PhotoCards = ({ photo }) => {
   };
   return (
     <div>
-      {" "}
+      {/* {" "} */}
       <Col>
         <div className="card-group mt-2 p-2" style={{ height: "330px" }}>
-          <div className="card border-dark">
+          <div className="card border-color">
             <a onClick={() => handleOnCLick()}>
               <img
                 src={photo.url}

@@ -5,10 +5,10 @@ export const AlbumCards = ({ album }) => {
 
   return (
     <div>
-      {" "}
+      {/* {" "} */}
       <Col>
         <div className="card-group mt-2 p-2" style={{ height: "275px" }}>
-          <div className="card border-dark">
+          <div className="card border-color">
             <p className="centered" style={{ fontSize: "65px" }}>
               {firstLetter[0]}
             </p>

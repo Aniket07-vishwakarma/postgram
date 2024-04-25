@@ -1,6 +1,6 @@
 export const AboutUs = () => {
   return (
-    <div>
+    <>
       <div
         style={{
           backgroundColor: "#A3C1AD",
@@ -13,14 +13,14 @@ export const AboutUs = () => {
       >
         <p>About App</p>
       </div>
-      <div className="border border-dark mt-2 p-2">
+      <div className="border border-color mt-2 p-2">
         <h6>
-          This is a demo project built on React.js. The purpose of this
-          app is to learn about hosting an application on AWS using a CI/CD code
+          This is a demo project built on React.js. The purpose of this app is
+          to learn about hosting an application on AWS using a CI/CD code
           pipeline.
         </h6>
       </div>
-    </div>
+    </>
   );
 };
 
