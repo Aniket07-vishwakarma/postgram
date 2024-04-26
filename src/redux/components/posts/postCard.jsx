@@ -11,7 +11,7 @@ export const PostCard = ({ post }) => {
         <p className="card-text">{post.body}</p>
         <button
           type="button"
-          className="btn btn-primary btn-sm"
+          className="btn btn-color btn-sm"
           onClick={() => setOpenComment(!openComment)}
         >
           Comments

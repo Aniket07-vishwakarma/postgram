@@ -10,6 +10,7 @@ export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/login" element={<LoginUser />} />
+      <Route path="/" element={<Album />} />
       <Route path="/albums" element={<Album />} />
       <Route path="/albums/:id" element={<Photos />} />
       <Route path="/posts" element={<Posts />} />

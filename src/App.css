@@ -41,3 +41,11 @@
 div.border-color {
   border-color: #5f9ea0 !important;
 }
+
+a.active {
+  background-color: #5f9ea0 !important;
+}
+
+button.btn-color {
+  background-color: #5f9ea0;
+}
