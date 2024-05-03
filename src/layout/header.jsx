@@ -5,27 +5,25 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { LoginUser } from "../redux/components/loginUser/Login";
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
+import { UserProfile } from "./userProfile";
 
 export const Header = () => {
-  let albumButton = "active",
-    postButton,
-    userButton;
+  let navActiveObj = { album: "active" };
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  if (window.location.href.includes("albums")) {
-    albumButton = "active";
-    postButton = "";
-    userButton = "";
+  if (
+    window.location.href.includes("albums") ||
+    window.location.href.endsWith(`${window.location.host}/`)
+  ) {
+    navActiveObj = { album: "active" };
   } else if (window.location.href.includes("posts")) {
-    albumButton = "";
-    postButton = "active";
-    userButton = "";
+    navActiveObj = { posts: "active" };
   } else if (window.location.href.includes("users")) {
-    albumButton = "";
-    postButton = "";
-    userButton = "active";
+    navActiveObj = { user: "active" };
+  } else {
+    navActiveObj = {};
   }
 
   // const login = useSelector((state) => state.UserReducer.login);
@@ -85,21 +83,7 @@ export const Header = () => {
         </nav>
 
         <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>User Profile</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <b>User Id:</b> {profile.id ?? 1}
-          </Modal.Body>
-          <Modal.Body>
-            <b>Name:</b> {profile.name ?? "Leanne Graham"}
-          </Modal.Body>
-          <Modal.Body>
-            <b>Email:</b> {profile.email ?? "Sincere@april.biz"}
-          </Modal.Body>
-          <Modal.Body>
-            <b>Role:</b> {profile.role ?? "Admin"}
-          </Modal.Body>
+          <UserProfile profile={profile} />
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
@@ -117,7 +101,7 @@ export const Header = () => {
                 <li className="nav-item">
                   <a
                     href={`${window.location.origin}/albums`}
-                    className={`nav-link text-dark ${albumButton}`}
+                    className={`nav-link text-dark ${navActiveObj?.album}`}
                     aria-current="page"
                   >
                     ALBUMS
@@ -126,7 +110,7 @@ export const Header = () => {
                 <li>
                   <a
                     href={`${window.location.origin}/posts`}
-                    className={`nav-link text-dark ${postButton}`}
+                    className={`nav-link text-dark ${navActiveObj?.posts}`}
                   >
                     POSTS
                   </a>
@@ -135,7 +119,7 @@ export const Header = () => {
                   <li>
                     <a
                       href={`${window.location.origin}/users`}
-                      className={`nav-link text-dark ${userButton}`}
+                      className={`nav-link text-dark ${navActiveObj?.user}`}
                     >
                       USERS
                     </a>
