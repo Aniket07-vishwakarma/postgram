@@ -3,10 +3,10 @@ import { Header } from "./header";
 
 export const LayoutRoutes = () => {
   return (
-    <div>
+    <>
       <BrowserRouter>
-        <Header />    
+        <Header />
       </BrowserRouter>
-    </div>
+    </>
   );
 };

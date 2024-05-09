@@ -10,6 +10,7 @@ import { UserProfile } from "./userProfile";
 export const Header = () => {
   let navActiveObj = { album: "active" };
   const [show, setShow] = useState(false);
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -35,34 +36,47 @@ export const Header = () => {
 
   if (profile?.id) {
     return (
-      <div>
+      <>
         <nav
           className="navbar navbar-expand-lg navbar-light ps-4 pe-2"
           style={{ background: "#5F9EA0", color: "white" }}
+          id="navbar"
         >
-          <a
-            className="navbar-brand mb-1"
-            href={`${window.location.origin}/albums`}
+          <button
+            className="custom-toggler navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarsColapse"
+            aria-controls="navbarsColapse"
+            aria-expanded={!isNavCollapsed ? true : false}
+            aria-label="Toggle navigation"
+            onClick={() => setIsNavCollapsed(!isNavCollapsed)}
           >
-            <BsCamera2 style={{ color: "white" }} />
-          </a>
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li className="nav-item active ">
-                <a
-                  className="nav-link text-light"
-                  href={`${window.location.origin}/about`}
-                >
-                  About App
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-light" href="#">
-                  Contact Us
-                </a>
-              </li>
-            </ul>
+          <div
+            className={`${isNavCollapsed ? "collapse" : ""} navbar-collapse`}
+            id="navbarsColapse"
+          >
+            <a
+              className="navbar-brand mb-1"
+              href={`${window.location.origin}/albums`}
+            >
+              <BsCamera2 style={{ color: "white" }} />
+            </a>
+            <a
+              className="nav-link text-light"
+              href={`${window.location.origin}/about`}
+            >
+              About App
+            </a>
+            <a
+              className={`nav-link text-light ${isNavCollapsed ? "ms-2" : ""}`}
+              href="#"
+            >
+              Contact Us
+            </a>
           </div>
 
           <Dropdown>
@@ -92,7 +106,7 @@ export const Header = () => {
         </Modal>
 
         <div className="container-fluid mt-1">
-          <div className="row" style={{ height: "570px" }}>
+          <div className="row">
             <div
               className="col-2 border border-color"
               style={{ textAlign: "center", backgroundColor: "#e6e6ff" }}
@@ -130,7 +144,7 @@ export const Header = () => {
 
             <div
               className="col-10"
-              style={{ height: "100%", overflow: "scroll" }}
+              style={{ height: "calc(100vh - 60px)", overflowY: "scroll" }}
             >
               <div className="container ">
                 <AppRoutes />
@@ -138,13 +152,13 @@ export const Header = () => {
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   } else {
     return (
-      <div>
+      <>
         <LoginUser />
-      </div>
+      </>
     );
   }
 };
