@@ -49,3 +49,8 @@ a.active {
 button.btn-color {
   background-color: #5f9ea0;
 }
+
+ul.nav {
+  --bs-nav-link-padding-x: 0.25rem;
+  --bs-nav-link-padding-y: 0.25rem;
+}
