@@ -17,12 +17,12 @@ export const Photos = () => {
   }, [albumId]);
 
   return (
-    <div>
+    <>
       <Row xs={1} md={2} lg={3} className="g-4">
         {photosResult?.photos?.map((photo) => (
           <PhotoCards key={photo.id} photo={photo} />
         ))}
       </Row>      
-    </div>
+    </>
   );
 };

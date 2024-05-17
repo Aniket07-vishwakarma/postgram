@@ -17,7 +17,7 @@ export const Comments = ({ postId }) => {
   }, [postId]);
 
   return (
-    <div>
+    <>
       {!commentsResults?.loading && (
         <ul className="list-group list-group-flush text-left">
           <hr />
@@ -29,7 +29,7 @@ export const Comments = ({ postId }) => {
           ))}
         </ul>
       )}
-    </div>
+    </>
   );
 };
 

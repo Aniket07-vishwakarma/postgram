@@ -4,10 +4,9 @@ export const AlbumCards = ({ album }) => {
   const firstLetter = album.title.toUpperCase();
 
   return (
-    <div>
-      {/* {" "} */}
-      <Col>
-        <div className="card-group mt-2 p-2" style={{ height: "275px" }}>
+    <>      
+      <Col style={{ position: "relative", display: "grid" }}>
+        <div className="card-group ps-2 pe-2">
           <div className="card border-color">
             <p className="centered" style={{ fontSize: "65px" }}>
               {firstLetter[0]}
@@ -23,7 +22,7 @@ export const AlbumCards = ({ album }) => {
           </div>
         </div>
       </Col>
-    </div>
+    </>
   );
 };
 export default AlbumCards;

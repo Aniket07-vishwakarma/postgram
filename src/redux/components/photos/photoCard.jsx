@@ -1,34 +1,42 @@
-import { Col } from "react-bootstrap";
-import PhotoPopup from "./photoPopup";
+import { Col, Modal } from "react-bootstrap";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const PhotoCards = ({ photo }) => {
   const [showPopup, setShowPopup] = useState(false);
   const handleOnCLick = () => {
-    setShowPopup(true);
+    setShowPopup(!showPopup);
   };
   return (
-    <div>
-      {/* {" "} */}
-      <Col>
-        <div className="card-group mt-2 p-2" style={{ height: "330px" }}>
+    <>
+      <Col style={{ position: "relative", display: "grid" }}>
+        <div className="card-group ps-2 pe-2">
           <div className="card border-color">
-            <a onClick={() => handleOnCLick()}>
+            <Link href="#" role="link" onClick={() => handleOnCLick()}>
               <img
                 src={photo.url}
                 className="card-img-top"
                 alt="..."
                 height="200"
               />
-            </a>
-            {showPopup && <PhotoPopup imageUrl={photo.url} />}
+            </Link>
+
+            <Modal show={showPopup}>
+              <Modal.Header closeButton onClick={() => handleOnCLick()}>
+                <Modal.Title>Preview Image</Modal.Title>
+              </Modal.Header>
+              <Modal.Body style={{ position: "relative", display: "contents" }}>
+                <img src={photo.url} />
+              </Modal.Body>
+            </Modal>
+
             <div className="card-body">
               <h5 className="card-title">{photo.title}</h5>
             </div>
           </div>
         </div>
       </Col>
-    </div>
+    </>
   );
 };
 export default PhotoCards;

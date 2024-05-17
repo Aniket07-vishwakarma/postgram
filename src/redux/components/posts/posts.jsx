@@ -29,7 +29,7 @@ export const Posts = () => {
   }, [userId]);
 
   return (
-    <div>
+    <>
       <div style={{ textAlign: "left" }}>
         {postsResults?.map((post) => (
           <PostCard key={post.id} post={post} />
@@ -57,7 +57,7 @@ export const Posts = () => {
           <CreatePost handleOnClose={handleClose} />
         </Modal>
       </div>
-    </div>
+    </>
   );
 };
 
