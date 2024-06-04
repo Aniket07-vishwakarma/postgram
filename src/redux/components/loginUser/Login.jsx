@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../actions/user.action";
@@ -7,7 +7,7 @@ import swal from "sweetalert";
 
 export const LoginUser = () => {
   const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
 
   const dispatch = useDispatch();
   const login = useSelector((state) => {
@@ -23,8 +23,8 @@ export const LoginUser = () => {
   useEffect(() => {
     if (!login) {
       swal({
-        title: "Work in progress!",
-        text: "Hi there. Welcome to Postgram demo project. Work is in progress. Please click on Start App button to start app.",
+        title: "Introduction!",
+        text: "Hello, welcome to the Postgram demo project built on React.js with integration of third party APIs. The app is hosted on AWS using a CI/CD code pipeline. Please click on Start App button to start the app.",
         button: {
           text: "Start App",
         },
@@ -59,48 +59,49 @@ export const LoginUser = () => {
   });
 
   return (
-    <div className="container min-vh-100 d-flex justify-content-center align-items-center">
-      <div className="h-50 w-50 rounded-3 border border-dark p-5">
-        <form onSubmit={formik.handleSubmit}>
-          <h3>Login</h3>
+    // <div className="container min-vh-100 d-flex justify-content-center align-items-center">
+    //   <div className="h-50 w-50 rounded-3 border border-dark p-5">
+    //     <form onSubmit={formik.handleSubmit}>
+    //       <h3>Login</h3>
 
-          <div className="form-group">
-            <input
-              id="email"
-              name="email"
-              type="email"
-              onChange={formik.handleChange}
-              value={formik?.values?.email}
-              className="form-control mt-4"
-              placeholder="Email"
-            />
-          </div>
+    //       <div className="form-group">
+    //         <input
+    //           id="email"
+    //           name="email"
+    //           type="email"
+    //           onChange={formik.handleChange}
+    //           value={formik?.values?.email}
+    //           className="form-control mt-4"
+    //           placeholder="Email"
+    //         />
+    //       </div>
 
-          <div className="form-group mt-4">
-            <input
-              id="password"
-              name="password"
-              type={showPassword ? "text" : "password"}
-              onChange={formik.handleChange}
-              value={formik?.values?.password}
-              className="form-control"
-              placeholder="Password"
-            />
-          </div>
+    //       <div className="form-group mt-4">
+    //         <input
+    //           id="password"
+    //           name="password"
+    //           type={showPassword ? "text" : "password"}
+    //           onChange={formik.handleChange}
+    //           value={formik?.values?.password}
+    //           className="form-control"
+    //           placeholder="Password"
+    //         />
+    //       </div>
 
-          <div className="d-flex justify-content-left align-items-left">
-            <input
-              type="checkbox"
-              onClick={() => setShowPassword(!showPassword)}
-            />
-            <label className="ms-1">Show Password</label>
-          </div>
+    //       <div className="d-flex justify-content-left align-items-left">
+    //         <input
+    //           type="checkbox"
+    //           onClick={() => setShowPassword(!showPassword)}
+    //         />
+    //         <label className="ms-1">Show Password</label>
+    //       </div>
 
-          <button type="submit" className="btn btn-dark btn-lg btn-block mt-4">
-            SIGN IN
-          </button>
-        </form>
-      </div>
-    </div>
+    //       <button type="submit" className="btn btn-dark btn-lg btn-block mt-4">
+    //         SIGN IN
+    //       </button>
+    //     </form>
+    //   </div>
+    // </div>
+    <></>
   );
 };

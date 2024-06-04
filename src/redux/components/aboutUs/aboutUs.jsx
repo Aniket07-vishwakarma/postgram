@@ -15,9 +15,8 @@ export const AboutUs = () => {
       </div>
       <div className="border border-color mt-2 p-2">
         <h6>
-          This is a demo project built on React.js. The purpose of this app is
-          to learn about hosting an application on AWS using a CI/CD code
-          pipeline.
+          This is a demo project built on React.js with integration of third party APIs. 
+          The purpose of this app is to learn about hosting an application on AWS using a CI/CD code pipeline.
         </h6>
       </div>
     </>
